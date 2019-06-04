@@ -2,7 +2,8 @@ import time
 import numpy as np
 import matplotlib.pyplot as plt
 from get_last import last
-from reverse import reverse
+from reverse_slicing import reverse_slicing
+from reverse_method import reverse
 from shuffle import random_shuffle
 from sort import sort
 
