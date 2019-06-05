@@ -13,7 +13,10 @@ class Generate_Results():
         self.algorithm = algorithm
         self.data = []
         self.x_values = []
-        self.y_duration = []
+        self.y_duration_1 = []
+        self.y_duration_2 = []
+        self.y_duration_3 = []
+        self.y_duration_average = []
 
     def create_size(self, min, max, steps):
         for i in range(min, max, steps):
@@ -23,20 +26,31 @@ class Generate_Results():
         for i in self.x_values:
             self.data.append(np.random.randint(100, size = i))
 
-    def run(self):
+    def run(self, sample_number):
         for i in self.data:
             start = time.time()
             self.algorithm(i)
             stop = time.time() - start
-            self.y_duration.append(stop)
-
+            self.__record_sample(sample_number, stop)
 
     def plot_chart(self):
-        plt.plot(self.x_values, self.y_duration)
+        plt.plot(self.x_values, self.y_duration_average)
+        plt.title(self.algorithm)
+        plt.ylim(0, 0.00001)
         plt.xlabel('Array Size')
         plt.ylabel('Duration')
         plt.show()
 
+    def __record_sample(self, sample_number, stop):
+        if sample_number == 1:
+            self.y_duration_1.append(stop)
+        elif sample_number == 2:
+            self.y_duration_2.append(stop)
+        else:
+            self.y_duration_3.append(stop)
+
+    def take_average(self):
+        self.y_duration_average = np.mean(np.array([self.y_duration_1, self.y_duration_2, self.y_duration_3]), axis=0)
 
 #pick the algorithm
 algorithm = reverse
@@ -44,14 +58,17 @@ algorithm = reverse
 #generate results
 generator = Generate_Results(algorithm)
 
-#creates x-values
+#creates x-values, min, max, step-size
 generator.create_size(5000, 105000, 2500)
 
 #random data generation for array of size per x-value
 generator.create_data()
 
-#run algorithm and record time
-generator.run()
+#run algorithm and record time - take 3 samples
+generator.run(1)
+generator.run(2)
+generator.run(3)
 
-#plot the chart
+#take average and plot the chart
+generator.take_average()
 generator.plot_chart()
