@@ -2,7 +2,7 @@
 #sort v2: sort all words in alphabetical order and all integers in numerical order
 # sort based on the positions in list of the strings and integers; it will sort based on those group types
 
-def sort(arr):
+def sort_mixed(arr):
   # Collect the values by type
   d = {}
   for x in arr:

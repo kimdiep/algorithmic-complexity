@@ -6,6 +6,7 @@ from reverse_slicing import reverse_slicing
 from reverse_method import reverse
 from shuffle import random_shuffle
 from sort import sort
+from sort_mixed import sort_mixed
 
 class Generate_Results():
 
