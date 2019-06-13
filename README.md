@@ -1,6 +1,6 @@
 # algorithmic-complexity
 
-This is my personal project to explore algorithmic complexity, using time as a proxy. Documents my explorations of numpy and matplotlib.
+This is my personal project to explore algorithmic complexity, using time as a proxy and Big O Notation. Documents my explorations of numpy and matplotlib.
 
 ## Features
 
@@ -24,6 +24,7 @@ I want to learn more about:
 ## Tech/framework used
 
 - Python
+- Pytest testing framework
 
 ## Code Example
 
