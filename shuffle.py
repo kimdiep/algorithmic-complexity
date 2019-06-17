@@ -1,6 +1,7 @@
 from random import randint
 
 # using Fisher–Yates shuffle Algorithm
+# shuffles a list
 
 def random_shuffle(arr):
   arr_range = range(0, len(arr))

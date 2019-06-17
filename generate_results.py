@@ -1,6 +1,7 @@
 import time
 import numpy as np
 import matplotlib.pyplot as plt
+from find_duplicates import find_duplicates
 from get_last import last
 from reverse_slicing import reverse_slicing
 from reverse_method import reverse
