@@ -35,6 +35,10 @@ I want to learn more about:
 
 ## How to use?
 
+Running pytests:
+
+`pytest tests/find_duplicates_tests.py -v`
+
 ## Credits
 
 ## License
